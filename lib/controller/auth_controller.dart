@@ -5,18 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:http/http.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AuthController extends GetxController {
   var profileImage = Rx<File?>(null); // Stores the selected profile image
 
-  // Future<void> pickProfileImage() async {
-  //   final pickedFile = await ImagePicker().pickImage(
-  //     source: ImageSource.gallery,
-  //   );
-  //   if (pickedFile != null) {
-  //     profileImage.value = File(pickedFile.path);
-  //   }
-  // }
+  Future<void> pickProfileImage() async {
+    final pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedFile != null) {
+      profileImage.value = File(pickedFile.path);
+    }
+  }
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();

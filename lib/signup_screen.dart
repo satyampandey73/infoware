@@ -29,57 +29,57 @@ class SignupScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 24),
-              // Obx(
-              //   () => Column(
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     children: [
-              //       Text(
-              //         'Profile Picture',
-              //         style: TextStyle(
-              //           fontSize: 20,
-              //           fontWeight: FontWeight.bold,
-              //           color: Color(0xFF493AD5),
-              //         ),
-              //       ),
-              //       SizedBox(height: 16),
-              //       GestureDetector(
-              //         onTap: () => authController.pickProfileImage(),
-              //         child: CircleAvatar(
-              //           radius: 60,
-              //           backgroundColor: Colors.grey[300],
-              //           backgroundImage:
-              //               authController.profileImage.value != null
-              //                   ? FileImage(authController.profileImage.value!)
-              //                   : null,
-              //           child:
-              //               authController.profileImage.value == null
-              //                   ? Icon(
-              //                     Icons.camera_alt,
-              //                     color: Colors.grey[700],
-              //                     size: 40,
-              //                   )
-              //                   : null,
-              //         ),
-              //       ),
-              //       if (authController.profileImage.value == null)
-              //         Padding(
-              //           padding: const EdgeInsets.only(top: 8.0),
-              //           child: Text(
-              //             'Tap to upload your profile picture',
-              //             style: TextStyle(color: Colors.grey, fontSize: 12),
-              //           ),
-              //         ),
-              //       if (!authController.isProfileImageValid.value)
-              //         Padding(
-              //           padding: const EdgeInsets.only(top: 8.0),
-              //           child: Text(
-              //             'Please upload a profile picture',
-              //             style: TextStyle(color: Colors.red, fontSize: 12),
-              //           ),
-              //         ),
-              //     ],
-              //   ),
-              // ),
+              Obx(
+                () => Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Profile Picture',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF493AD5),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    GestureDetector(
+                      onTap: () => authController.pickProfileImage(),
+                      child: CircleAvatar(
+                        radius: 60,
+                        backgroundColor: Colors.grey[300],
+                        backgroundImage:
+                            authController.profileImage.value != null
+                                ? FileImage(authController.profileImage.value!)
+                                : null,
+                        child:
+                            authController.profileImage.value == null
+                                ? Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.grey[700],
+                                  size: 40,
+                                )
+                                : null,
+                      ),
+                    ),
+                    if (authController.profileImage.value == null)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          'Tap to upload your profile picture',
+                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                        ),
+                      ),
+                    if (!authController.isProfileImageValid.value)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          'Please upload a profile picture',
+                          style: TextStyle(color: Colors.red, fontSize: 12),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
               Obx(
                 () => TextField(
                   controller: authController.firstNameController,
